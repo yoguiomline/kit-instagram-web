@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "assets/instagram"
-public_folder: "/assets/instagram"
+media_folder: "assets/logos"
+public_folder: "/assets/logos"
 
 locale: "es"
 
@@ -144,3 +144,24 @@ collections:
               - label: "Descripción"
                 name: "descripcion"
                 widget: "text"
+
+          - label: "── MARCAS ──"
+            name: "marcas_header"
+            widget: "hidden"
+            default: ""
+
+          - label: "Marcas"
+            name: "marcas"
+            widget: "list"
+            summary: "{{fields.nombre}}"
+            hint: "Agregá cada marca con su nombre y logo en PNG o JPG"
+            fields:
+              - label: "Nombre de la marca"
+                name: "nombre"
+                widget: "string"
+                hint: "Ej: Bayer, Rizobacter, YPF Agro"
+              - label: "Logo de la marca"
+                name: "logo"
+                widget: "image"
+                hint: "Subí el logo en PNG o JPG. Fondo transparente recomendado."
+                allow_multiple: false
