@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAR Agro Soluciones · Insumos Agropecuarios · Entre Ríos</title>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --verde-oscuro: #0C2E14;
+  --verde-medio: #1A5C30;
+  --verde-vivo: #2E8B4A;
+  --verde-logo: #2B7A38;
+  --naranja: #E05818;
+  --naranja-vivo: #F4921F;
+  --naranja-claro: #FFC96F;
+  --crema: #FDF6EC;
+  --dorado: #D4941A;
+  --blanco: #FFFFFF;
+  --texto: #1A2E1A;
+  --gris: #6B7A6B;
+  --gris-claro: #F0F4EE;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:var(--blanco);color:var(--texto);line-height:1.6;overflow-x:hidden;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--verde-oscuro);}
+::-webkit-scrollbar-thumb{background:var(--naranja);border-radius:3px;}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;height:68px;
+  padding:0 5%;display:flex;justify-content:space-between;align-items:center;
+  background:rgba(12,46,20,0.97);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(224,88,24,0.2);transition:all 0.3s;
+}
+nav.scrolled{height:60px;}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.nav-logo-img{height:38px;width:auto;filter:brightness(0) invert(1);}
+.nav-logo-img-fallback{
+  height:38px;display:flex;align-items:center;gap:6px;
+  font-family:'Montserrat',sans-serif;font-size:16px;font-weight:900;color:var(--blanco);letter-spacing:0.5px;
+}
+.nav-logo-img-fallback .accent{color:var(--naranja-vivo);}
+.nav-logo-sub{font-size:9px;font-weight:400;color:rgba(255,255,255,0.45);letter-spacing:2px;text-transform:uppercase;display:block;margin-top:1px;}
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
+.nav-links a{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none;transition:color 0.2s;}
+.nav-links a:hover{color:var(--naranja-vivo);}
+.nav-cta{background:var(--naranja);color:var(--blanco)!important;padding:9px 22px;border-radius:6px;transition:all 0.2s!important;}
+.nav-cta:hover{background:var(--naranja-vivo)!important;transform:translateY(-1px);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{width:22px;height:2px;background:var(--blanco);border-radius:2px;transition:all 0.3s;}
+
+/* ─── BANNER ─── */
+.banner{
+  margin-top:68px;
+  background:linear-gradient(135deg, var(--verde-oscuro) 0%, #1A5C30 60%, #0F3A1A 100%);
+  padding:60px 5% 55px;
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:space-between;
+  min-height:280px;
+}
+.banner::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 80% at 80% 50%, rgba(224,88,24,0.12) 0%, transparent 70%),
+              radial-gradient(ellipse 40% 60% at 10% 20%, rgba(43,122,56,0.3) 0%, transparent 60%);
+}
+.banner-deco{
+  position:absolute;right:-80px;top:50%;transform:translateY(-50%);
+  width:400px;height:400px;border-radius:50%;
+  border:60px solid rgba(224,88,24,0.08);
+}
+.banner-deco2{
+  position:absolute;right:60px;top:50%;transform:translateY(-50%);
+  width:260px;height:260px;border-radius:50%;
+  border:40px solid rgba(224,88,24,0.06);
+}
+.banner-left{position:relative;z-index:1;max-width:680px;}
+.banner-logo-wrap{margin-bottom:24px;}
+.banner-logo-img{height:90px;width:auto;}
+.banner-logo-svg{display:flex;align-items:center;gap:0;}
+.banner-tagline{
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(26px,3.5vw,42px);font-weight:900;
+  color:var(--blanco);line-height:1.15;letter-spacing:-0.5px;margin-bottom:14px;
+}
+.banner-tagline .naranja{color:var(--naranja-vivo);}
+.banner-sub{font-size:15px;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.7;max-width:500px;margin-bottom:28px;}
+.banner-chips{display:flex;flex-wrap:wrap;gap:10px;}
+.banner-chip{
+  background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);
+  color:rgba(255,255,255,0.75);padding:7px 16px;border-radius:100px;
+  font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;
+}
+.banner-chip.hot{background:rgba(224,88,24,0.2);border-color:rgba(224,88,24,0.4);color:var(--naranja-claro);}
+.banner-right{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-end;gap:16px;}
+.banner-badge{
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
+  border-radius:16px;padding:20px 24px;text-align:center;min-width:140px;
+}
+.banner-badge-num{font-family:'Montserrat',sans-serif;font-size:36px;font-weight:900;color:var(--naranja-vivo);line-height:1;}
+.banner-badge-label{font-size:10px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:1.5px;margin-top:5px;}
+
+/* ─── HERO ─── */
+.hero{
+  background:var(--verde-oscuro);padding:80px 5% 70px;
+  position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 55% 60% at 75% 50%, rgba(46,139,74,0.15) 0%, transparent 70%),
+              radial-gradient(ellipse 35% 50% at 15% 80%, rgba(224,88,24,0.08) 0%, transparent 60%);
+}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:70px;align-items:center;position:relative;z-index:1;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(224,88,24,0.15);border:1px solid rgba(224,88,24,0.3);color:var(--naranja-claro);padding:6px 16px;border-radius:100px;font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px;}
+.hero-eyebrow .dot{width:6px;height:6px;background:var(--naranja);border-radius:50%;animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(34px,4.2vw,58px);font-weight:900;color:var(--blanco);line-height:1.05;letter-spacing:-1px;margin-bottom:20px;}
+.hero h1 .acc{color:var(--naranja-vivo);}
+.hero-desc{font-size:15px;color:rgba(255,255,255,0.55);max-width:500px;line-height:1.85;font-weight:300;margin-bottom:36px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-primary{background:linear-gradient(135deg,var(--naranja),var(--dorado));color:var(--blanco);padding:14px 30px;border-radius:8px;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 20px rgba(224,88,24,0.4);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(224,88,24,0.55);}
+.btn-outline{border:1px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.78);padding:14px 30px;border-radius:8px;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all 0.3s;}
+.btn-outline:hover{border-color:var(--naranja);color:var(--naranja);}
+.hero-stats{display:flex;gap:36px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.07);}
+.hstat-n{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:900;color:var(--naranja-vivo);line-height:1;}
+.hstat-l{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:1px;text-transform:uppercase;margin-top:4px;}
+
+/* ─── INSTAGRAM CARD ─── */
+.ig-card{
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+  border-radius:22px;padding:26px;backdrop-filter:blur(10px);
+  box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+.ig-head{display:flex;align-items:center;gap:13px;margin-bottom:18px;}
+.ig-ring{
+  width:70px;height:70px;border-radius:50%;flex-shrink:0;
+  padding:3px;position:relative;
+  background:conic-gradient(var(--naranja) 0deg, var(--dorado) 90deg, var(--verde-vivo) 180deg, var(--naranja) 360deg);
+  animation:spin-ring 6s linear infinite;
+}
+@keyframes spin-ring{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.ig-inner{
+  width:100%;height:100%;border-radius:50%;
+  background:var(--verde-oscuro);border:2px solid var(--verde-oscuro);
+  overflow:hidden;display:flex;align-items:center;justify-content:center;
+}
+.ig-inner img{width:100%;height:100%;object-fit:cover;}
+.ig-fallback{font-size:26px;}
+.ig-verified{position:absolute;bottom:-1px;right:-1px;width:22px;height:22px;background:linear-gradient(135deg,#0095f6,#4a90d9);border-radius:50%;border:2px solid var(--verde-oscuro);display:flex;align-items:center;justify-content:center;}
+.ig-name{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--blanco);}
+.ig-handle{font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;}
+.ig-cat{font-size:10px;color:var(--naranja-claro);font-weight:600;letter-spacing:0.5px;margin-top:3px;}
+.ig-stats{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;padding:14px 0;margin:14px 0;border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07);}
+.ig-sv{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:var(--blanco);line-height:1;margin-bottom:3px;}
+.ig-sl{font-size:9px;color:rgba(255,255,255,0.38);letter-spacing:1px;text-transform:uppercase;}
+.ig-bio{font-size:12px;color:rgba(255,255,255,0.7);line-height:1.65;margin-bottom:15px;}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;border-radius:10px;overflow:hidden;margin-bottom:15px;}
+.ig-cell{aspect-ratio:1;overflow:hidden;position:relative;}
+.ig-cell img{width:100%;height:100%;object-fit:cover;transition:transform 0.3s;}
+.ig-cell:hover img{transform:scale(1.08);}
+.ig-cell-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.ig-cell:nth-child(1) .ig-cell-ph{background:linear-gradient(135deg,#0c3318,#1a6b3c);}
+.ig-cell:nth-child(2) .ig-cell-ph{background:linear-gradient(135deg,#c84e10,#e8751a);}
+.ig-cell:nth-child(3) .ig-cell-ph{background:linear-gradient(135deg,#1a5c30,#2e8b4a);}
+.ig-cell:nth-child(4) .ig-cell-ph{background:linear-gradient(135deg,#c4841a,#d4941a);}
+.ig-cell:nth-child(5) .ig-cell-ph{background:linear-gradient(135deg,#1a4a28,#1a5c30);}
+.ig-cell:nth-child(6) .ig-cell-ph{background:linear-gradient(135deg,#e05818,#c4841a);}
+.ig-btn{
+  display:block;width:100%;padding:11px;border:none;cursor:pointer;border-radius:9px;text-align:center;text-decoration:none;
+  background:linear-gradient(135deg,var(--naranja),var(--dorado));
+  color:var(--blanco);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  transition:all 0.2s;
+}
+.ig-btn:hover{opacity:0.88;transform:translateY(-1px);}
+
+/* ─── SHARED ─── */
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--naranja);margin-bottom:12px;display:flex;align-items:center;gap:8px;}
+.eyebrow::before{content:'';width:20px;height:2px;background:var(--naranja);display:inline-block;}
+.sec-title{font-family:'Montserrat',sans-serif;font-size:clamp(26px,3.2vw,44px);font-weight:900;line-height:1.1;letter-spacing:-0.5px;margin-bottom:14px;}
+.sec-intro{font-size:15px;color:var(--gris);max-width:600px;line-height:1.85;font-weight:300;}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 0.65s,transform 0.65s cubic-bezier(.25,.46,.45,.94);}
+.reveal.in{opacity:1;transform:none;}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ─── NOSOTROS ─── */
+.nosotros{padding:100px 5%;background:var(--crema);}
+.nos-inner{max-width:1100px;margin:0 auto;}
+.nos-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;margin-top:50px;}
+.nos-text p{font-size:15px;line-height:1.9;color:#3A4A3A;margin-bottom:16px;font-weight:300;}
+.nos-text strong{color:var(--verde-medio);font-weight:600;}
+.nos-text em{color:var(--naranja);font-style:normal;font-weight:600;}
+.nos-values{margin-top:28px;display:flex;flex-direction:column;gap:11px;}
+.nos-val{display:flex;align-items:flex-start;gap:11px;}
+.nos-val-dot{width:7px;height:7px;background:var(--naranja);border-radius:50%;flex-shrink:0;margin-top:7px;}
+.nos-val-text{font-size:14px;color:var(--gris);line-height:1.6;}
+.nos-val-text strong{color:var(--verde-medio);font-weight:600;}
+.stats-2x2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.stat-box{border-radius:16px;padding:28px;text-align:center;transition:transform 0.3s;}
+.stat-box:hover{transform:translateY(-4px);}
+.stat-box.g{background:linear-gradient(135deg,var(--verde-oscuro),var(--verde-medio));color:var(--blanco);}
+.stat-box.o{background:linear-gradient(135deg,var(--naranja),var(--dorado));color:var(--blanco);}
+.stat-box.l{background:var(--blanco);border:1px solid rgba(0,0,0,0.07);box-shadow:0 2px 16px rgba(0,0,0,0.05);}
+.stat-icon{font-size:26px;margin-bottom:10px;}
+.stat-n{font-family:'Montserrat',sans-serif;font-size:40px;font-weight:900;line-height:1;margin-bottom:6px;}
+.stat-box.g .stat-n,.stat-box.o .stat-n{color:var(--blanco);}
+.stat-box.l .stat-n{color:var(--verde-medio);}
+.stat-box.l:nth-child(4) .stat-n{color:var(--naranja);}
+.stat-lbl{font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;opacity:0.7;}
+
+/* ─── SECTORES ─── */
+.sectores{padding:100px 5%;background:var(--verde-oscuro);}
+.sec-inner{max-width:1200px;margin:0 auto;}
+.sectores .sec-title{color:var(--blanco);}
+.sectores .sec-intro{color:rgba(255,255,255,0.5);}
+.sect-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px;}
+.sect-card{
+  border-radius:20px;padding:34px 26px;cursor:default;
+  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);
+  transition:all 0.35s;position:relative;overflow:hidden;
+}
+.sect-card::after{content:'';position:absolute;inset:0;opacity:0;transition:opacity 0.35s;border-radius:20px;}
+.sect-card:hover{transform:translateY(-7px);border-color:rgba(224,88,24,0.35);}
+.sect-card.ct::after{background:linear-gradient(135deg,rgba(224,88,24,0.12),transparent);}
+.sect-card.em::after{background:linear-gradient(135deg,rgba(212,148,26,0.12),transparent);}
+.sect-card.ex::after{background:linear-gradient(135deg,rgba(46,139,74,0.18),transparent);}
+.sect-card.ho::after{background:linear-gradient(135deg,rgba(92,184,92,0.18),transparent);}
+.sect-card:hover::after{opacity:1;}
+.sect-emoji{font-size:42px;margin-bottom:18px;display:block;}
+.sect-name{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:var(--blanco);margin-bottom:10px;}
+.sect-desc{font-size:13px;color:rgba(255,255,255,0.48);line-height:1.7;font-weight:300;}
+.sect-badge{display:inline-block;margin-top:16px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:100px;}
+.ct .sect-badge{background:rgba(224,88,24,0.2);color:var(--naranja-claro);}
+.em .sect-badge{background:rgba(212,148,26,0.25);color:var(--naranja-claro);}
+.ex .sect-badge{background:rgba(46,139,74,0.2);color:#7ee0a0;}
+.ho .sect-badge{background:rgba(92,184,92,0.2);color:#7ee0a0;}
+.temporada-hot{position:absolute;top:14px;right:14px;background:rgba(224,88,24,0.35);color:var(--naranja-claro);font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:100px;}
+
+/* ─── MARCAS ─── */
+.marcas{padding:100px 5%;background:var(--blanco);}
+.mar-inner{max-width:1100px;margin:0 auto;}
+.mar-top{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:60px;}
+.mar-desc{font-size:15px;color:var(--gris);line-height:1.85;font-weight:300;}
+.mar-desc strong{color:var(--verde-medio);font-weight:600;}
+
+/* Yara destacada */
+.yara-hero{
+  background:linear-gradient(135deg,#003B5C 0%,#00294A 100%);
+  border-radius:20px;padding:36px;margin-bottom:20px;
+  display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;
+  position:relative;overflow:hidden;
+}
+.yara-hero::before{content:'';position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,0.04);}
+.yara-logo-big{font-family:'Montserrat',sans-serif;font-size:54px;font-weight:900;color:#FFFFFF;letter-spacing:-2px;line-height:1;}
+.yara-logo-big span{color:#00A0D0;}
+.yara-tag{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px;}
+.yara-desc{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.75;margin-top:12px;font-weight:300;}
+.yara-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+.yara-pill{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);padding:5px 14px;border-radius:100px;font-size:11px;font-weight:600;}
+.yara-badge{
+  background:rgba(0,160,208,0.15);border:1px solid rgba(0,160,208,0.3);
+  color:#00A0D0;padding:12px 20px;border-radius:12px;text-align:center;
+  font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  white-space:nowrap;
+}
+.yara-badge span{display:block;font-size:22px;font-weight:900;color:#fff;margin-bottom:4px;}
+
+.brands-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.brand-card{
+  border-radius:16px;padding:26px;border:1px solid rgba(0,0,0,0.07);
+  transition:all 0.3s;position:relative;overflow:hidden;
+}
+.brand-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.brand-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.08);}
+.brand-card:hover::after{transform:scaleX(1);}
+.adama::after{background:linear-gradient(to right,#0066B3,#00A0E0);}
+.syng::after{background:linear-gradient(to right,#00A651,#00C864);}
+.surcos::after{background:linear-gradient(to right,var(--naranja),var(--dorado));}
+.otros::after{background:linear-gradient(to right,var(--verde-medio),var(--verde-vivo));}
+.brand-name{font-family:'Montserrat',sans-serif;font-weight:900;font-size:22px;margin-bottom:6px;}
+.adama .brand-name{color:#0066B3;}
+.syng .brand-name{color:#00A651;}
+.surcos .brand-name{color:var(--naranja);}
+.otros .brand-name{color:var(--verde-medio);font-size:14px;}
+.brand-type{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gris);margin-bottom:10px;}
+.brand-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.brand-tag{font-size:10px;background:var(--gris-claro);color:var(--gris);padding:4px 10px;border-radius:100px;font-weight:500;}
+.brand-cta-card{
+  background:linear-gradient(135deg,var(--verde-oscuro),var(--verde-medio));
+  border:none;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:10px;
+}
+.brand-cta-card .brand-name{color:var(--blanco);}
+.brand-cta-card .brand-type{color:rgba(255,255,255,0.5);}
+.brand-cta-link{font-size:11px;font-weight:700;color:var(--naranja-claro);letter-spacing:1px;text-transform:uppercase;text-decoration:none;margin-top:4px;}
+
+/* ─── SERVICIOS ─── */
+.servicios{padding:100px 5%;background:var(--crema);}
+.srv-inner{max-width:1100px;margin:0 auto;}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px;}
+.srv-card{
+  background:var(--blanco);border-radius:20px;padding:34px;
+  border:1px solid rgba(0,0,0,0.06);box-shadow:0 2px 18px rgba(0,0,0,0.04);
+  transition:all 0.35s;position:relative;overflow:hidden;
+}
+.srv-card:hover{transform:translateY(-5px);box-shadow:0 14px 45px rgba(0,0,0,0.09);}
+.srv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--naranja),var(--dorado));transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
+.srv-card:hover::before{transform:scaleX(1);}
+.srv-icon{font-size:34px;margin-bottom:18px;display:block;}
+.srv-num{font-size:10px;font-weight:700;letter-spacing:2px;color:var(--naranja);margin-bottom:10px;text-transform:uppercase;}
+.srv-name{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:var(--verde-oscuro);margin-bottom:10px;line-height:1.2;}
+.srv-desc{font-size:13px;color:var(--gris);line-height:1.8;font-weight:300;}
+
+/* ─── FAMILIA ─── */
+.familia{padding:100px 5%;background:var(--verde-oscuro);}
+.fam-inner{max-width:1100px;margin:0 auto;}
+.familia .sec-title{color:var(--blanco);}
+.familia .sec-intro{color:rgba(255,255,255,0.5);}
+.fam-quote{
+  margin:40px 0 56px;padding:28px 36px;
+  background:rgba(224,88,24,0.1);border-left:4px solid var(--naranja);
+  border-radius:0 14px 14px 0;
+}
+.fam-quote p{font-family:'Montserrat',sans-serif;font-size:clamp(15px,1.8vw,20px);font-weight:300;font-style:italic;color:rgba(255,255,255,0.82);line-height:1.55;}
+.fam-quote em{color:var(--naranja-claro);font-style:normal;font-weight:600;}
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+.team-card{
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);
+  border-radius:16px;padding:22px 16px;text-align:center;transition:all 0.3s;
+}
+.team-card:hover{background:rgba(255,255,255,0.09);transform:translateY(-4px);border-color:rgba(224,88,24,0.3);}
+.team-av{
+  width:62px;height:62px;border-radius:50%;margin:0 auto 12px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;color:var(--blanco);
+}
+.av1{background:linear-gradient(135deg,#1A5C30,#0C2E14);}
+.av2{background:linear-gradient(135deg,var(--naranja),var(--dorado));}
+.av3{background:linear-gradient(135deg,#2E8B4A,#1A5C30);}
+.av4{background:linear-gradient(135deg,var(--dorado),var(--naranja));}
+.av5{background:linear-gradient(135deg,#5CB85C,#2E8B4A);}
+.team-name{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:var(--blanco);margin-bottom:3px;line-height:1.2;}
+.team-role{font-size:10px;color:var(--naranja-claro);font-weight:600;letter-spacing:0.3px;margin-bottom:7px;line-height:1.3;}
+.team-bio{font-size:10px;color:rgba(255,255,255,0.38);line-height:1.6;font-weight:300;}
+.team-pill{display:inline-block;margin-top:9px;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:100px;}
+.fam-pill{background:rgba(224,88,24,0.2);color:var(--naranja-claro);}
+.emp-pill{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.45);}
+
+/* ─── GALERÍA ─── */
+.galeria{padding:90px 5%;background:var(--blanco);}
+.gal-inner{max-width:1200px;margin:0 auto;}
+.gal-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;flex-wrap:wrap;gap:20px;}
+.gal-ig-link{display:flex;align-items:center;gap:8px;color:var(--naranja);text-decoration:none;font-size:13px;font-weight:600;border:1px solid rgba(224,88,24,0.3);padding:10px 20px;border-radius:100px;transition:all 0.2s;}
+.gal-ig-link:hover{background:rgba(224,88,24,0.07);}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+.gal-item{aspect-ratio:1;border-radius:12px;overflow:hidden;position:relative;cursor:pointer;}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;}
+.gal-item:hover img{transform:scale(1.07);}
+.gal-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;}
+.gal-item:nth-child(1) .gal-ph{background:linear-gradient(135deg,#0c2e14,#1a6b3c);}
+.gal-item:nth-child(2) .gal-ph{background:linear-gradient(135deg,#c84e10,#e8751a);}
+.gal-item:nth-child(3) .gal-ph{background:linear-gradient(135deg,#1a5c30,#2e8b4a);}
+.gal-item:nth-child(4) .gal-ph{background:linear-gradient(135deg,#c4841a,#d4941a);}
+.gal-item:nth-child(5) .gal-ph{background:linear-gradient(135deg,#2e8b4a,#5cb85c);}
+.gal-item:nth-child(6) .gal-ph{background:linear-gradient(135deg,#0c2e14,#1a5c30);}
+.gal-item:nth-child(7) .gal-ph{background:linear-gradient(135deg,#e05818,#ffc96f);}
+.gal-item:nth-child(8) .gal-ph{background:linear-gradient(135deg,#1a5c30,#0c2e14);}
+.gal-ph-emoji{font-size:30px;}
+.gal-ph-text{font-size:9px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:1px;font-weight:600;}
+.gal-overlay{position:absolute;inset:0;background:rgba(12,46,20,0);display:flex;align-items:center;justify-content:center;transition:background 0.3s;}
+.gal-item:hover .gal-overlay{background:rgba(12,46,20,0.5);}
+.gal-icon{color:var(--blanco);opacity:0;transform:scale(0.7);transition:all 0.3s;font-size:22px;}
+.gal-item:hover .gal-icon{opacity:1;transform:scale(1);}
+
+/* ─── CONTACTO ─── */
+.contacto{padding:100px 5%;background:var(--verde-oscuro);}
+.con-inner{max-width:1100px;margin:0 auto;}
+.contacto .sec-title{color:var(--blanco);}
+.contacto .sec-intro{color:rgba(255,255,255,0.5);}
+.con-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:56px;align-items:start;}
+.con-card{
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);
+  border-radius:14px;padding:22px;margin-bottom:14px;
+  display:flex;align-items:center;gap:14px;
+  text-decoration:none;transition:all 0.2s;
+}
+.con-card:hover{background:rgba(255,255,255,0.09);border-color:rgba(224,88,24,0.3);}
+.con-icon{width:44px;height:44px;flex-shrink:0;border-radius:11px;background:rgba(224,88,24,0.15);display:flex;align-items:center;justify-content:center;font-size:19px;}
+.con-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.38);margin-bottom:3px;}
+.con-val{font-size:14px;font-weight:600;color:var(--blanco);}
+.con-sub{font-size:11px;color:rgba(255,255,255,0.38);margin-top:2px;}
+.social-row{display:flex;gap:12px;margin-top:20px;}
+.soc-btn{flex:1;padding:13px;border-radius:11px;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;font-weight:700;transition:all 0.2s;}
+.soc-btn:hover{transform:translateY(-2px);filter:brightness(1.1);}
+.soc-ig{background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);color:#fff;}
+.soc-wa{background:#25D366;color:#fff;}
+.form-group{margin-bottom:16px;}
+.form-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:7px;display:block;}
+.form-input,.form-select,.form-ta{
+  width:100%;padding:13px 16px;border-radius:9px;
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);
+  color:var(--blanco);font-family:'Poppins',sans-serif;font-size:14px;
+  transition:border-color 0.2s;outline:none;
+}
+.form-input:focus,.form-select:focus,.form-ta:focus{border-color:rgba(224,88,24,0.5);}
+.form-input::placeholder,.form-ta::placeholder{color:rgba(255,255,255,0.22);}
+.form-select option{background:#1a5c30;}
+.form-ta{min-height:110px;resize:vertical;}
+.form-btn{
+  width:100%;padding:15px;border:none;cursor:pointer;border-radius:9px;
+  background:linear-gradient(135deg,var(--naranja),var(--dorado));
+  color:var(--blanco);font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
+  transition:all 0.2s;box-shadow:0 4px 18px rgba(224,88,24,0.35);
+}
+.form-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(224,88,24,0.5);}
+#form-ok{display:none;margin-top:14px;padding:14px;background:rgba(46,139,74,0.2);border:1px solid rgba(46,139,74,0.4);border-radius:9px;color:#7ee0a0;font-size:13px;font-weight:500;text-align:center;}
+
+/* ─── FOOTER ─── */
+footer{background:#060F08;padding:48px 5% 28px;border-top:1px solid rgba(255,255,255,0.05);}
+.ft-inner{max-width:1100px;margin:0 auto;}
+.ft-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,0.06);}
+.ft-brand-name{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;color:var(--blanco);display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.ft-tagline{font-size:12px;color:rgba(255,255,255,0.3);max-width:260px;line-height:1.6;}
+.ft-cols{display:flex;gap:56px;}
+.ft-col-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--naranja);margin-bottom:14px;}
+.ft-col a{display:block;font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;margin-bottom:9px;transition:color 0.2s;}
+.ft-col a:hover{color:rgba(255,255,255,0.78);}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:22px;flex-wrap:wrap;gap:10px;}
+.ft-copy{font-size:11px;color:rgba(255,255,255,0.18);}
+.ft-ig{font-size:11px;color:rgba(255,255,255,0.28);}
+
+/* ─── WHATSAPP FLOAT ─── */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:999;
+  width:58px;height:58px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 22px rgba(37,211,102,0.5);text-decoration:none;
+  transition:all 0.3s;animation:float 3s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.wa-float:hover{box-shadow:0 8px 32px rgba(37,211,102,0.7);animation:none;transform:scale(1.1);}
+.wa-float svg{width:30px;height:30px;fill:white;}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1100px){
+  .sect-grid{grid-template-columns:1fr 1fr;}
+  .team-grid{grid-template-columns:repeat(3,1fr);}
+  .brands-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:900px){
+  .banner{flex-direction:column;gap:30px;}
+  .banner-right{flex-direction:row;align-self:flex-start;}
+  .hero-inner{grid-template-columns:1fr;}
+  .ig-card{max-width:380px;}
+  .nos-grid{grid-template-columns:1fr;gap:44px;}
+  .mar-top{grid-template-columns:1fr;}
+  .srv-grid{grid-template-columns:1fr 1fr;}
+  .con-grid{grid-template-columns:1fr;}
+  .ft-top{flex-direction:column;gap:32px;}
+  .gal-grid{grid-template-columns:repeat(2,1fr);}
+  .yara-hero{grid-template-columns:1fr;}
+}
+@media(max-width:680px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(12,46,20,0.99);padding:20px 5%;gap:18px;border-bottom:1px solid rgba(255,255,255,0.07);}
+  .sect-grid{grid-template-columns:1fr 1fr;}
+  .srv-grid{grid-template-columns:1fr;}
+  .team-grid{grid-template-columns:1fr 1fr;}
+  .brands-grid{grid-template-columns:1fr;}
+  .ft-cols{flex-direction:column;gap:24px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <a href="#inicio" class="nav-logo">
+    <img src="assets/logo.png" alt="MAR Agro Soluciones" class="nav-logo-img"
+         onerror="this.style.display='none';document.getElementById('nav-fallback').style.display='flex'">
+    <div id="nav-fallback" class="nav-logo-img-fallback" style="display:none">
+      <svg width="32" height="32" viewBox="0 0 100 100">
+        <text y="68" font-size="62" font-weight="900" fill="#2B7A38" font-family="Arial Black,sans-serif">M</text>
+        <circle cx="82" cy="42" r="22" fill="none" stroke="#E05818" stroke-width="10"/>
+      </svg>
+      <div>
+        <div><span style="color:#2B7A38;font-size:15px;font-weight:900;">MAR</span> <span class="accent" style="color:var(--naranja-vivo)">Agro</span></div>
+        <span class="nav-logo-sub">Insumos Agropecuarios</span>
+      </div>
+    </div>
+    <div id="nav-brand" style="display:none">
+      <span style="font-family:Montserrat,sans-serif;font-size:13px;font-weight:700;color:#fff;">MAR Agro Soluciones</span>
+      <span class="nav-logo-sub">Insumos Agropecuarios</span>
+    </div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#sectores">Rubros</a></li>
+    <li><a href="#marcas">Marcas</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#familia">Equipo</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#contacto" class="nav-cta">Consultar</a></li>
+  </ul>
+  <div class="hamburger" id="ham" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ── BANNER ── -->
+<section class="banner" id="inicio">
+  <div class="banner-deco"></div>
+  <div class="banner-deco2"></div>
+  <div class="banner-left reveal">
+    <div class="banner-logo-wrap">
+      <!-- Logo real -->
+      <img src="assets/logo.png" alt="MAR Agro Soluciones" class="banner-logo-img"
+           onerror="this.style.display='none';document.getElementById('banner-svg-logo').style.display='flex'">
+      <!-- Logo SVG fallback -->
+      <div id="banner-svg-logo" style="display:none;align-items:center;gap:4px;">
+        <svg width="200" height="85" viewBox="0 0 200 85" xmlns="http://www.w3.org/2000/svg">
+          <text x="4" y="66" font-family="'Arial Black',Impact,sans-serif" font-weight="900" font-size="68" fill="#FFFFFF">MAR</text>
+          <circle cx="174" cy="40" r="28" fill="none" stroke="#E05818" stroke-width="11"/>
+          <circle cx="174" cy="40" r="15" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="5"/>
+          <text x="6" y="82" font-family="Arial,sans-serif" font-weight="600" font-size="11.5" fill="rgba(255,255,255,0.7)" letter-spacing="3">AGROSOLUCIONES</text>
+        </svg>
+      </div>
+    </div>
+    <h1 class="banner-tagline"><span id="cms-tagline">Del campo a tu cosecha.</span><br><span class="naranja" id="cms-subtitulo">Con respaldo técnico real.</span></h1>
+    <p class="banner-sub" id="cms-desc-banner">Insumos agropecuarios de primer nivel para el productor de Entre Ríos. Más de dos décadas eligiendo las mejores marcas del mundo para que tu cultivo rinda al máximo.</p>
+    <div class="banner-chips">
+      <span class="banner-chip">🍊 Citricultura</span>
+      <span class="banner-chip hot">📦 Empaques — Temporada</span>
+      <span class="banner-chip">🌾 Extensivo</span>
+      <span class="banner-chip">🥬 Horticultura</span>
+    </div>
+  </div>
+  <div class="banner-right reveal d2">
+    <div class="banner-badge">
+      <div class="banner-badge-num">+20</div>
+      <div class="banner-badge-label">Años en el campo</div>
+    </div>
+    <div class="banner-badge">
+      <div class="banner-badge-num">+10</div>
+      <div class="banner-badge-label">Marcas premium</div>
+    </div>
+    <div class="banner-badge">
+      <div class="banner-badge-num">5</div>
+      <div class="banner-badge-label">Personas del equipo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HERO / IG CARD ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><span class="dot"></span> Entre Ríos, Argentina · @mar_agrosoluciones</div>
+      <h1 id="cms-hero-titulo">Tu socio en <span class="acc">cada campaña.</span></h1>
+      <p class="hero-desc" id="cms-hero-desc">Fertilizantes, fitosanitarios, insumos de empaque y asesoramiento técnico en el campo. Familia Repetto — tres generaciones viviendo el agro entrerriano.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/543456417626" target="_blank" class="btn-primary">📱 WhatsApp directo</a>
+        <a href="https://www.instagram.com/mar_agrosoluciones/" target="_blank" class="btn-outline">Ver Instagram →</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hstat-n">3456</div><div class="hstat-l">Área · 417626</div></div>
+        <div><div class="hstat-n">4</div><div class="hstat-l">Rubros</div></div>
+        <div><div class="hstat-n">Yara</div><div class="hstat-l">Marca Líder</div></div>
+      </div>
+    </div>
+    <!-- Instagram Card -->
+    <div class="ig-card reveal d2">
+      <div class="ig-head">
+        <div style="position:relative;flex-shrink:0;">
+          <div class="ig-ring">
+            <div class="ig-inner">
+              <img src="assets/instagram/profile.jpg" alt="MAR Agro Soluciones"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <span class="ig-fallback" style="display:none">🍊</span>
+            </div>
+          </div>
+          <div class="ig-verified">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+        </div>
+        <div>
+          <div class="ig-name">MAR AGROSOLUCIONES 🍊</div>
+          <div class="ig-handle">@mar_agrosoluciones</div>
+          <div class="ig-cat">Insumos Agropecuarios · Entre Ríos</div>
+        </div>
+      </div>
+      <div class="ig-stats">
+        <div><div class="ig-sv">—</div><div class="ig-sl">Posts</div></div>
+        <div><div class="ig-sv">—</div><div class="ig-sl">Seguidores</div></div>
+        <div><div class="ig-sv">—</div><div class="ig-sl">Siguiendo</div></div>
+      </div>
+      <div class="ig-bio">
+        🍊 Insumos agro · Citricultura · Entre Ríos<br>
+        📦 Empaques · Extensivo · Horticultura<br>
+        🌿 Yara · Adama · Syngenta · Surcos<br>
+        👨‍👦‍👦 Familia Repetto — negocio familiar
+      </div>
+      <div class="ig-grid">
+        <div class="ig-cell"><img src="assets/instagram/post-1.jpg" alt="" onerror="this.style.display='none'"><div class="ig-cell-ph">🍊</div></div>
+        <div class="ig-cell"><img src="assets/instagram/post-2.jpg" alt="" onerror="this.style.display='none'"><div class="ig-cell-ph">🌿</div></div>
+        <div class="ig-cell"><img src="assets/instagram/post-3.jpg" alt="" onerror="this.style.display='none'"><div class="ig-cell-ph">📦</div></div>
+        <div class="ig-cell"><img src="assets/instagram/post-4.jpg" alt="" onerror="this.style.display='none'"><div class="ig-cell-ph">🌾</div></div>
+        <div class="ig-cell"><img src="assets/instagram/post-5.jpg" alt="" onerror="this.style.display='none'"><div class="ig-cell-ph">🥬</div></div>
+        <div class="ig-cell"><img src="assets/instagram/post-6.jpg" alt="" onerror="this.style.display='none'"><div class="ig-cell-ph">🍋</div></div>
+      </div>
+      <a href="https://www.instagram.com/mar_agrosoluciones/" target="_blank" class="ig-btn">Ver perfil completo en Instagram ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── NOSOTROS ── -->
+<section class="nosotros" id="nosotros">
+  <div class="nos-inner">
+    <div class="eyebrow reveal">Quiénes somos</div>
+    <h2 class="sec-title reveal">El campo es nuestro<br>trabajo y nuestra pasión.</h2>
+    <div class="nos-grid">
+      <div class="nos-text reveal" id="cms-nosotros-wrap">
+        <p>En <strong>MAR Agro Soluciones</strong> somos una empresa familiar que nació del amor al campo y creció con el productor entrerriano. Marcelo, Ulises y Azul Repetto trabajando codo a codo cada temporada, junto a Facundo y Brian — porque entendemos que detrás de cada consulta hay un productor que confía en nosotros.</p>
+        <p>Trabajamos con los <em>mejores insumos del mercado</em> para que el productor citrícola, el horticultor y el extensivo cuenten con lo que necesitan, cuando lo necesitan. No somos solo un punto de venta: somos <strong>tu asesor técnico en el terreno</strong>.</p>
+        <p>Con presencia activa en las principales campañas de la región, acompañamos desde la preparación del suelo hasta la entrega del producto en empaque, con el respaldo de marcas líderes mundiales y el conocimiento de quien conoce cada lote de Entre Ríos.</p>
+        <div class="nos-values">
+          <div class="nos-val"><div class="nos-val-dot"></div><div class="nos-val-text"><strong>Confianza familiar:</strong> te atendemos nosotros, siempre los mismos.</div></div>
+          <div class="nos-val"><div class="nos-val-dot"></div><div class="nos-val-text"><strong>Respaldo técnico:</strong> asesoramiento real en campo, no solo venta.</div></div>
+          <div class="nos-val"><div class="nos-val-dot"></div><div class="nos-val-text"><strong>Stock disponible:</strong> en temporada alta, cuando más lo necesitás.</div></div>
+          <div class="nos-val"><div class="nos-val-dot"></div><div class="nos-val-text"><strong>Marcas premium:</strong> Yara, Adama, Syngenta, Surcos y más.</div></div>
+        </div>
+      </div>
+      <div class="stats-2x2 reveal d2">
+        <div class="stat-box g"><div class="stat-icon">🍊</div><div class="stat-n" data-target="20">0</div><div class="stat-lbl">Años en el campo</div></div>
+        <div class="stat-box o"><div class="stat-icon">🌿</div><div class="stat-n" data-target="4">0</div><div class="stat-lbl">Rubros cubiertos</div></div>
+        <div class="stat-box l"><div class="stat-icon">🏆</div><div class="stat-n" data-target="10">0</div><div class="stat-lbl">Marcas líderes</div></div>
+        <div class="stat-box l"><div class="stat-icon">👨‍👦‍👦</div><div class="stat-n" data-target="5">0</div><div class="stat-lbl">Personas del equipo</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTORES ── -->
+<section class="sectores" id="sectores">
+  <div class="sec-inner">
+    <div class="eyebrow reveal">Rubros</div>
+    <h2 class="sec-title reveal">Cubrimos todo el campo.</h2>
+    <p class="sec-intro reveal">Desde la citricultura hasta la horticultura de estación, contamos con los insumos y el asesoramiento para cada rubro del productor entrerriano.</p>
+    <div class="sect-grid">
+      <div class="sect-card ct reveal d1">
+        <span class="sect-emoji">🍊</span>
+        <div class="sect-name">Citricultura</div>
+        <p class="sect-desc">Nuestro rubro principal. Fertilizantes foliares, fitosanitarios y correctores para mandarina, naranja, limón y pomelo. Acompañamos toda la campaña, desde la brotación hasta el galpón.</p>
+        <span class="sect-badge">Rubro Principal</span>
+      </div>
+      <div class="sect-card em reveal d2">
+        <span class="temporada-hot">🔥 Temporada activa</span>
+        <span class="sect-emoji">📦</span>
+        <div class="sect-name">Empaques</div>
+        <p class="sect-desc">Insumos para empaque y postcosecha. Stock disponible en temporada: cajas, bandejas, materiales de envase y productos de tratamiento para fruta de calidad exportación.</p>
+        <span class="sect-badge">Alta Demanda</span>
+      </div>
+      <div class="sect-card ex reveal d3">
+        <span class="sect-emoji">🌾</span>
+        <div class="sect-name">Extensivo</div>
+        <p class="sect-desc">Herbicidas, insecticidas y fertilizantes para soja, maíz, trigo y arroz. Soluciones eficientes para grandes superficies con respaldo agronómico de Facundo Roncaglia.</p>
+        <span class="sect-badge">Grandes Superficies</span>
+      </div>
+      <div class="sect-card ho reveal d4">
+        <span class="sect-emoji">🥬</span>
+        <div class="sect-name">Horticultura</div>
+        <p class="sect-desc">Insumos específicos para cultivos hortícolas de estación. Fertilizantes de alta solubilidad, fungicidas y bioestimulantes para máxima calidad en cada cosecha.</p>
+        <span class="sect-badge">Cultivos de Estación</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MARCAS ── -->
+<section class="marcas" id="marcas">
+  <div class="mar-inner">
+    <div class="mar-top">
+      <div>
+        <div class="eyebrow reveal">Marcas</div>
+        <h2 class="sec-title reveal">Las mejores marcas<br>del mundo, a tu alcance.</h2>
+      </div>
+      <p class="mar-desc reveal d2">Trabajamos con los líderes mundiales en nutrición vegetal y protección de cultivos. Eso significa que lo que llevás a tu campo tiene el <strong>respaldo de décadas de investigación agronómica</strong> y la trazabilidad de una cadena confiable.</p>
+    </div>
+
+    <!-- YARA — La más importante -->
+    <div class="yara-hero reveal">
+      <div>
+        <div class="yara-logo-big">yara<span>.</span></div>
+        <div class="yara-tag">Nutrición Vegetal · Marca #1 del Portafolio MAR</div>
+        <p class="yara-desc">Yara es el proveedor de fertilizantes más importante de MAR Agro Soluciones. Líder mundial en nutrición de cultivos, con productos específicos para citricultura y horticultura que maximizan calidad y rendimiento en cada campaña.</p>
+        <div class="yara-pills">
+          <span class="yara-pill">YaraVita Citrução</span>
+          <span class="yara-pill">YaraLiva</span>
+          <span class="yara-pill">YaraMila</span>
+          <span class="yara-pill">YaraFolia</span>
+          <span class="yara-pill">Fertirriego</span>
+          <span class="yara-pill">Foliares</span>
+        </div>
+      </div>
+      <div class="yara-badge">
+        <span>#1</span>
+        Marca Principal<br>del Portafolio
+      </div>
+    </div>
+
+    <div class="brands-grid">
+      <div class="brand-card adama reveal d1">
+        <div class="brand-name">ADAMA</div>
+        <div class="brand-type">Protección de Cultivos</div>
+        <div class="brand-tags">
+          <span class="brand-tag">Herbicidas</span><span class="brand-tag">Fungicidas</span>
+          <span class="brand-tag">Insecticidas</span><span class="brand-tag">Cítricos</span>
+        </div>
+      </div>
+      <div class="brand-card syng reveal d2">
+        <div class="brand-name">Syngenta</div>
+        <div class="brand-type">Agroquímicos · Semillas</div>
+        <div class="brand-tags">
+          <span class="brand-tag">Fungicidas</span><span class="brand-tag">Insecticidas</span>
+          <span class="brand-tag">Reguladores</span><span class="brand-tag">Semillas</span>
+        </div>
+      </div>
+      <div class="brand-card surcos reveal d3">
+        <div class="brand-name">Surcos</div>
+        <div class="brand-type">Insumos Agropecuarios</div>
+        <div class="brand-tags">
+          <span class="brand-tag">Nutrición</span><span class="brand-tag">Fitosanitarios</span>
+          <span class="brand-tag">Entre Ríos</span>
+        </div>
+      </div>
+      <div class="brand-card otros reveal d1">
+        <div class="brand-name">+ Más marcas disponibles</div>
+        <div class="brand-type">Portfolio Completo</div>
+        <div class="brand-tags">
+          <span class="brand-tag">Varios fabricantes</span><span class="brand-tag">Mejores precios</span>
+          <span class="brand-tag">Stock regional</span>
+        </div>
+      </div>
+      <div class="brand-card brand-cta-card reveal d2">
+        <div style="font-size:28px;">🤝</div>
+        <div class="brand-name">¿Buscás algo específico?</div>
+        <div class="brand-type">Consultanos sin compromiso</div>
+        <a href="https://wa.me/543456417626" target="_blank" class="brand-cta-link">Consultar por WhatsApp →</a>
+      </div>
+      <div class="brand-card reveal d3" style="background:var(--gris-claro);border-color:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:8px;">
+        <div style="font-size:36px;">📞</div>
+        <div style="font-family:Montserrat,sans-serif;font-weight:800;font-size:18px;color:var(--verde-medio);">Atención directa</div>
+        <div style="font-size:12px;color:var(--gris);">3456 · 417626<br>Lunes a Sábado · 7 a 19hs</div>
+        <a href="tel:+543456417626" style="margin-top:6px;font-size:11px;font-weight:700;color:var(--naranja);letter-spacing:1px;text-transform:uppercase;text-decoration:none;">Llamar →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICIOS ── -->
+<section class="servicios" id="servicios">
+  <div class="srv-inner">
+    <div class="eyebrow reveal">Servicios</div>
+    <h2 class="sec-title reveal">Más que insumos:<br>soluciones para tu campo.</h2>
+    <p class="sec-intro reveal">No somos solo una distribuidora. Cada cliente recibe asesoramiento técnico personalizado, disponibilidad en las fechas críticas y una relación de confianza que dura años.</p>
+    <div class="srv-grid" id="cms-srv-grid">
+      <div class="srv-card reveal d1">
+        <span class="srv-icon">🌿</span>
+        <div class="srv-num">01 —</div>
+        <div class="srv-name">Asesoramiento Agronómico</div>
+        <p class="srv-desc">Diagnóstico y recomendación con Facundo Roncaglia, Ing. Agrónomo. Analizamos el cultivo, el suelo y los objetivos para darte la solución exacta — no la más cara.</p>
+      </div>
+      <div class="srv-card reveal d2">
+        <span class="srv-icon">🚚</span>
+        <div class="srv-num">02 —</div>
+        <div class="srv-name">Entrega en Tiempo</div>
+        <p class="srv-desc">En la campaña citrícola y de empaques, el tiempo es crítico. Garantizamos disponibilidad y entrega cuando el productor lo necesita. Ulises coordina la logística personalmente.</p>
+      </div>
+      <div class="srv-card reveal d3">
+        <span class="srv-icon">📊</span>
+        <div class="srv-num">03 —</div>
+        <div class="srv-name">Planificación de Campaña</div>
+        <p class="srv-desc">Planificamos juntos la temporada para que no te falte nada. Presupuesto anticipado, reserva de stock y cronograma de aplicaciones ajustado a tus lotes.</p>
+      </div>
+      <div class="srv-card reveal d1">
+        <span class="srv-icon">💬</span>
+        <div class="srv-num">04 —</div>
+        <div class="srv-name">Atención Directa</div>
+        <p class="srv-desc">Cuando llamás, te atiende Marcelo, Ulises, Azul o alguien del equipo. Sin call centers, sin demoras. Respuesta en el día porque en el campo los problemas no esperan.</p>
+      </div>
+      <div class="srv-card reveal d2">
+        <span class="srv-icon">🔬</span>
+        <div class="srv-num">05 —</div>
+        <div class="srv-name">Fitosanitarios de Calidad</div>
+        <p class="srv-desc">Línea completa de herbicidas, fungicidas e insecticidas con Adama, Syngenta y otras marcas líderes. Aplicaciones seguras y eficientes para cada cultivo.</p>
+      </div>
+      <div class="srv-card reveal d3">
+        <span class="srv-icon">🌱</span>
+        <div class="srv-num">06 —</div>
+        <div class="srv-name">Nutrición con Yara</div>
+        <p class="srv-desc">Fertilizantes foliares, correctores y planes de fertirriego con la línea Yara. La marca más importante de nuestro portafolio para maximizar rendimiento y calidad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAMILIA / EQUIPO ── -->
+<section class="familia" id="familia">
+  <div class="fam-inner">
+    <div class="eyebrow reveal">Nuestro equipo</div>
+    <h2 class="sec-title reveal">Somos familia.<br>Eso se nota en cada trato.</h2>
+    <p class="sec-intro reveal">Padre, hijos y amigos que eligieron este trabajo con la misma pasión. Cuando llamás a MAR, hablás con nosotros mismos — siempre.</p>
+    <div class="fam-quote reveal" id="cms-fam-quote">
+      <p>"La magnitud de lo que hacemos no está en el tamaño del negocio, sino en el <em>compromiso con cada productor</em> que confía en la familia Repetto temporada tras temporada."</p>
+    </div>
+    <div class="team-grid" id="cms-team-grid">
+      <div class="team-card reveal d1">
+        <div class="team-av av1">MR</div>
+        <div class="team-name">Marcelo Repetto</div>
+        <div class="team-role">Padre Fundador</div>
+        <div class="team-bio">La visión, la experiencia y la confianza que dan forma a todo lo que es MAR Agro Soluciones hoy.</div>
+        <span class="team-pill fam-pill">Familia</span>
+      </div>
+      <div class="team-card reveal d2">
+        <div class="team-av av2">UR</div>
+        <div class="team-name">Ulises Repetto</div>
+        <div class="team-role">Gerente · Ventas · Asesoramiento</div>
+        <div class="team-bio">Motor del día a día. Coordina ventas, relaciones con productores y asesoramiento directo en campo.</div>
+        <span class="team-pill fam-pill">Familia</span>
+      </div>
+      <div class="team-card reveal d3">
+        <div class="team-av av3">AR</div>
+        <div class="team-name">Azul Repetto</div>
+        <div class="team-role">Logística · Oficina · CM</div>
+        <div class="team-bio">Mantiene todo ordenado: logística, administración y la presencia digital que representa a MAR en redes.</div>
+        <span class="team-pill fam-pill">Familia</span>
+      </div>
+      <div class="team-card reveal d4">
+        <div class="team-av av4">FR</div>
+        <div class="team-name">Facundo Roncaglia</div>
+        <div class="team-role">Ingeniero Agrónomo · Asesoría</div>
+        <div class="team-bio">El respaldo técnico del equipo. Recorre los lotes, diagnostica y recomienda con criterio agronómico.</div>
+        <span class="team-pill emp-pill">Equipo</span>
+      </div>
+      <div class="team-card reveal d4">
+        <div class="team-av av5">BM</div>
+        <div class="team-name">Brian Monzon</div>
+        <div class="team-role">Encargado del Galpón</div>
+        <div class="team-bio">Garantiza que cada pedido salga en condiciones y en el momento justo. El motor logístico del depósito.</div>
+        <span class="team-pill emp-pill">Equipo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALERÍA ── -->
+<section class="galeria" id="galeria">
+  <div class="gal-inner">
+    <div class="gal-header reveal">
+      <div>
+        <div class="eyebrow">Instagram</div>
+        <h2 class="sec-title">El campo en imágenes.</h2>
+      </div>
+      <a href="https://www.instagram.com/mar_agrosoluciones/" target="_blank" class="gal-ig-link">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        @mar_agrosoluciones
+      </a>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item reveal d1"><img src="assets/instagram/post-1.jpg" alt="Citricultura" onerror="this.style.display='none'"><div class="gal-ph"><div class="gal-ph-emoji">🍊</div><div class="gal-ph-text">Citricultura</div></div><div class="gal-overlay"><span class="gal-icon">📸</span></div></div>
+      <div class="gal-item reveal d2"><img src="assets/instagram/post-2.jpg" alt="Insumos" onerror="this.style.display='none'"><div class="gal-ph"><div class="gal-ph-emoji">🌿</div><div class="gal-ph-text">Insumos</div></div><div class="gal-overlay"><span class="gal-icon">📸</span></div></div>
+      <div class="gal-item reveal d3"><img src="assets/instagram/post-3.jpg" alt="Empaques" onerror="this.style.display='none'"><div class="gal-ph"><div class="gal-ph-emoji">📦</div><div class="gal-ph-text">Empaques</div></div><div class="gal-overlay"><span class="gal-icon">📸</span></div></div>
+      <div class="gal-item reveal d4"><img src="assets/instagram/post-4.jpg" alt="Extensivo" onerror="this.style.display='none'"><div class="gal-ph"><div class="gal-ph-emoji">🌾</div><div class="gal-ph-text">Extensivo</div></div><div class="gal-overlay"><span class="gal-icon">📸</span></div></div>
+      <div class="gal-item reveal d1"><img src="assets/instagram/post-5.jpg" alt="Horticultura" onerror="this.style.display='none'"><div class="gal-ph"><div class="gal-ph-emoji">🥬</div><div class="gal-ph-text">Horticultura</div></div><div class="gal-overlay"><span class="gal-icon">📸</span></div></div>
+      <div class="gal-item reveal d2"><img src="assets/instagram/post-6.jpg" alt="Asesoramiento" onerror="this.style.display='none'"><div class="gal-ph"><div class="gal-ph-emoji">🤝</div><div class="gal-ph-text">Asesoramiento</div></div><div class="gal-overlay"><span class="gal-icon">📸</span></div></div>
+      <div class="gal-item reveal d3"><img src="assets/instagram/post-7.jpg" alt="Yara" onerror="this.style.display='none'"><div class="gal-ph"><div class="gal-ph-emoji">🏆</div><div class="gal-ph-text">Yara</div></div><div class="gal-overlay"><span class="gal-icon">📸</span></div></div>
+      <div class="gal-item reveal d4"><img src="assets/instagram/post-8.jpg" alt="Equipo" onerror="this.style.display='none'"><div class="gal-ph"><div class="gal-ph-emoji">👨‍👦‍👦</div><div class="gal-ph-text">El Equipo</div></div><div class="gal-overlay"><span class="gal-icon">📸</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACTO ── -->
+<section class="contacto" id="contacto">
+  <div class="con-inner">
+    <div class="eyebrow reveal">Contacto</div>
+    <h2 class="sec-title reveal">¿Necesitás insumos<br>para tu campaña?</h2>
+    <p class="sec-intro reveal">Hablemos directamente. Te atendemos nosotros mismos, sin intermediarios. Contanos qué necesitás y te armamos una propuesta a medida.</p>
+    <div class="con-grid">
+      <div class="reveal">
+        <a href="https://wa.me/543456417626" target="_blank" class="con-card">
+          <div class="con-icon">📱</div>
+          <div><div class="con-label">WhatsApp</div><div class="con-val">(03456) 41-7626</div><div class="con-sub">Respuesta rápida · Atención directa</div></div>
+        </a>
+        <a href="tel:+543456417626" class="con-card">
+          <div class="con-icon">📞</div>
+          <div><div class="con-label">Teléfono</div><div class="con-val">3456 · 417626</div><div class="con-sub">Lunes a Sábado · 7:00 a 19:00 hs</div></div>
+        </a>
+        <div class="con-card" style="cursor:default;">
+          <div class="con-icon">📍</div>
+          <div><div class="con-label">Zona de cobertura</div><div class="con-val">Entre Ríos, Argentina</div><div class="con-sub">Región citrícola · Entrega en campo</div></div>
+        </div>
+        <div class="con-card" style="cursor:default;">
+          <div class="con-icon">👨‍👦‍👦</div>
+          <div><div class="con-label">Te atiende</div><div class="con-val">Marcelo · Ulises · Azul</div><div class="con-sub">Familia Repetto · MAR Agro Soluciones</div></div>
+        </div>
+        <div class="social-row">
+          <a href="https://www.instagram.com/mar_agrosoluciones/" target="_blank" class="soc-btn soc-ig">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="white"/></svg>
+            Instagram
+          </a>
+          <a href="https://wa.me/543456417626" target="_blank" class="soc-btn soc-wa">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.124 1.534 5.854L0 24l6.31-1.518A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.86 0-3.607-.5-5.107-1.373l-.367-.217-3.744.9.928-3.653-.24-.378A9.957 9.957 0 012 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <form onsubmit="submitForm(event)">
+          <div class="form-group"><label class="form-label">Tu nombre</label><input type="text" class="form-input" placeholder="Nombre y apellido"></div>
+          <div class="form-group"><label class="form-label">Teléfono / WhatsApp</label><input type="tel" class="form-input" placeholder="+54 3456 XXXXXX"></div>
+          <div class="form-group">
+            <label class="form-label">Rubro</label>
+            <select class="form-select">
+              <option value="">Seleccioná tu rubro</option>
+              <option>🍊 Citricultura</option>
+              <option>📦 Empaques</option>
+              <option>🌾 Extensivo</option>
+              <option>🥬 Horticultura</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form-group"><label class="form-label">¿Qué necesitás?</label><textarea class="form-ta" placeholder="Contanos qué insumos necesitás, para qué cultivo, en qué fechas..."></textarea></div>
+          <button type="submit" class="form-btn">Enviar consulta →</button>
+        </form>
+        <div id="form-ok">✅ ¡Consulta enviada! Te contactamos pronto.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div>
+        <div class="ft-brand-name">
+          <img src="assets/logo.png" alt="" style="height:32px;filter:brightness(0) invert(1);"
+               onerror="this.outerHTML='🍊'">
+          MAR Agro Soluciones
+        </div>
+        <p class="ft-tagline">Insumos agropecuarios · Citricultura, Empaques, Extensivo y Horticultura · Empresa familiar · Entre Ríos, Argentina</p>
+      </div>
+      <div class="ft-cols">
+        <div class="ft-col">
+          <div class="ft-col-title">Navegación</div>
+          <a href="#nosotros">Quiénes somos</a>
+          <a href="#sectores">Rubros</a>
+          <a href="#marcas">Marcas</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#familia">El Equipo</a>
+        </div>
+        <div class="ft-col">
+          <div class="ft-col-title">Contacto</div>
+          <a href="https://wa.me/543456417626" target="_blank">WhatsApp</a>
+          <a href="tel:+543456417626">3456 · 417626</a>
+          <a href="https://www.instagram.com/mar_agrosoluciones/" target="_blank">@mar_agrosoluciones</a>
+          <a href="#contacto">Hacer consulta</a>
+        </div>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <div class="ft-copy">© 2026 MAR Agro Soluciones · Familia Repetto · Entre Ríos, Argentina</div>
+      <div class="ft-ig">@mar_agrosoluciones</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── WHATSAPP FLOAT ── -->
+<a href="https://wa.me/543456417626" target="_blank" class="wa-float" title="Consultar por WhatsApp — 3456 417626">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.124 1.534 5.854L0 24l6.31-1.518A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.86 0-3.607-.5-5.107-1.373l-.367-.217-3.744.9.928-3.653-.24-.378A9.957 9.957 0 012 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script>
+// ── CMS LOADER ──
+async function loadCMS() {
+  try {
+    const res = await fetch('/data/site.json');
+    if (!res.ok) return;
+    const d = await res.json();
+
+    const set = (id, val) => {
+      const el = document.getElementById(id);
+      if (el && val !== undefined) el.textContent = val;
+    };
+
+    // Textos principales
+    set('cms-tagline', d.tagline);
+    set('cms-subtitulo', d.subtitulo);
+    set('cms-desc-banner', d.descripcion_banner);
+    set('cms-hero-titulo', d.hero_titulo);
+    set('cms-hero-desc', d.hero_descripcion);
+
+    // Nosotros
+    const nosWrap = document.getElementById('cms-nosotros-wrap');
+    if (nosWrap && d.nosotros_p1) {
+      const ps = nosWrap.querySelectorAll('p');
+      if (ps[0]) ps[0].textContent = d.nosotros_p1;
+      if (ps[1]) ps[1].textContent = d.nosotros_p2;
+      if (ps[2]) ps[2].textContent = d.nosotros_p3;
+    }
+
+    // Stats counters
+    const anos = document.querySelector('[data-target="20"]');
+    const marcas = document.querySelector('[data-target="10"]');
+    if (anos && d.anos_experiencia) anos.dataset.target = d.anos_experiencia;
+    if (marcas && d.cantidad_marcas) marcas.dataset.target = d.cantidad_marcas;
+
+    // Frase familia
+    const fq = document.getElementById('cms-fam-quote');
+    if (fq && d.frase_familia) {
+      fq.querySelector('p').textContent = `"${d.frase_familia}"`;
+    }
+
+    // Teléfono y WhatsApp — actualizar todos los links y textos
+    if (d.whatsapp) {
+      document.querySelectorAll('a[href*="wa.me"]').forEach(a => {
+        a.href = `https://wa.me/${d.whatsapp}`;
+      });
+      const floatWa = document.querySelector('.wa-float');
+      if (floatWa) floatWa.title = `Consultar por WhatsApp — ${d.telefono || d.whatsapp}`;
+    }
+    if (d.telefono) {
+      document.querySelectorAll('a[href*="tel:"]').forEach(a => {
+        a.href = `tel:+${d.whatsapp}`;
+      });
+      document.querySelectorAll('.con-val').forEach(el => {
+        if (el.textContent.includes('3456') || el.textContent.includes('417')) {
+          el.textContent = d.telefono;
+        }
+      });
+    }
+    if (d.email) {
+      document.querySelectorAll('a[href*="mailto:"]').forEach(a => {
+        a.href = `mailto:${d.email}`;
+        if (!a.classList.contains('nav-logo')) a.querySelector?.('.con-val') && (a.querySelector('.con-val').textContent = d.email);
+      });
+    }
+    if (d.horario) {
+      document.querySelectorAll('.con-sub').forEach(el => {
+        if (el.textContent.includes('Lunes') || el.textContent.includes('7:00')) {
+          el.textContent = d.horario;
+        }
+      });
+    }
+
+    // Instagram links
+    if (d.instagram) {
+      const igUrl = `https://www.instagram.com/${d.instagram}/`;
+      document.querySelectorAll(`a[href*="instagram.com"]`).forEach(a => {
+        a.href = igUrl;
+      });
+    }
+
+    // Equipo
+    if (d.equipo && d.equipo.length) {
+      const avClasses = ['av1','av2','av3','av4','av5'];
+      const grid = document.getElementById('cms-team-grid');
+      if (grid) {
+        grid.innerHTML = d.equipo.map((m, i) => `
+          <div class="team-card reveal d${Math.min(i+1,4)}">
+            <div class="team-av ${avClasses[i] || 'av5'}">${m.iniciales}</div>
+            <div class="team-name">${m.nombre}</div>
+            <div class="team-role">${m.rol}</div>
+            <div class="team-bio">${m.bio}</div>
+            <span class="team-pill ${m.tipo === 'familia' ? 'fam-pill' : 'emp-pill'}">${m.tipo === 'familia' ? 'Familia' : 'Equipo'}</span>
+          </div>`).join('');
+        grid.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+      }
+    }
+
+    // Servicios
+    if (d.servicios && d.servicios.length) {
+      const srvGrid = document.getElementById('cms-srv-grid');
+      if (srvGrid) {
+        srvGrid.innerHTML = d.servicios.map((s, i) => `
+          <div class="srv-card reveal d${(i % 3) + 1}">
+            <span class="srv-icon">${s.icono}</span>
+            <div class="srv-num">0${i+1} —</div>
+            <div class="srv-name">${s.nombre}</div>
+            <p class="srv-desc">${s.descripcion}</p>
+          </div>`).join('');
+        srvGrid.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+      }
+    }
+
+  } catch (e) {
+    // Modo local — usa el contenido estático del HTML
+    console.log('CMS: usando contenido estático (modo local)');
+  }
+}
+loadCMS();
+
+// Netlify Identity redirect
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', user => {
+    if (!user) {
+      window.netlifyIdentity.on('login', () => document.location.href = '/admin/');
+    }
+  });
+}
+
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 50));
+
+// Hamburger
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+  document.getElementById('navLinks').classList.remove('open');
+}));
+
+// Reveal on scroll
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+// Counter animation
+function animCount(el, target, dur = 1600) {
+  let start = null;
+  const step = ts => {
+    if (!start) start = ts;
+    const p = Math.min((ts - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(ease * target);
+    if (p < 1) requestAnimationFrame(step);
+    else el.textContent = target + '+';
+  };
+  requestAnimationFrame(step);
+}
+const co = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animCount(e.target, +e.target.dataset.target);
+      co.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.6 });
+document.querySelectorAll('[data-target]').forEach(el => co.observe(el));
+
+// Parallax hero circles
+window.addEventListener('scroll', () => {
+  const s = scrollY;
+  document.querySelectorAll('.banner-deco,.banner-deco2').forEach((el, i) => {
+    el.style.transform = `translateY(calc(-50% + ${s * (0.05 + i * 0.03)}px))`;
+  });
+});
+
+// Sector card tilt
+document.querySelectorAll('.sect-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width - 0.5) * 8;
+    const y = ((e.clientY - r.top) / r.height - 0.5) * -8;
+    card.style.transform = `translateY(-7px) rotateY(${x}deg) rotateX(${y}deg)`;
+  });
+  card.addEventListener('mouseleave', () => card.style.transform = '');
+});
+
+// Form submit
+function submitForm(e) {
+  e.preventDefault();
+  const ok = document.getElementById('form-ok');
+  ok.style.display = 'block';
+  e.target.reset();
+  setTimeout(() => ok.style.display = 'none', 5000);
+}
+
+// Gallery lightbox
+document.querySelectorAll('.gal-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const img = item.querySelector('img');
+    if (!img || img.style.display === 'none') return;
+    const ov = document.createElement('div');
+    ov.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:pointer;';
+    const i = document.createElement('img');
+    i.src = img.src;
+    i.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:10px;box-shadow:0 20px 80px rgba(0,0,0,0.8);';
+    ov.append(i);
+    ov.addEventListener('click', () => ov.remove());
+    document.body.appendChild(ov);
+  });
+});
+
+// Show nav text when logo image fails
+document.querySelector('.nav-logo-img')?.addEventListener('error', function() {
+  document.getElementById('nav-brand').style.display = 'block';
+});
+</script>
+</body>
+</html>

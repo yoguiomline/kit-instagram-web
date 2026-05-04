@@ -1,0 +1,89 @@
+{
+  "empresa": "MAR Agro Soluciones",
+  "tagline": "Del campo a tu cosecha.",
+  "subtitulo": "Con respaldo técnico real.",
+  "descripcion_banner": "Insumos agropecuarios de primer nivel para el productor de Entre Ríos. Más de dos décadas eligiendo las mejores marcas del mundo para que tu cultivo rinda al máximo.",
+  "hero_titulo": "Tu socio en cada campaña.",
+  "hero_descripcion": "Fertilizantes, fitosanitarios, insumos de empaque y asesoramiento técnico en el campo. Familia Repetto — tres generaciones viviendo el agro entrerriano.",
+  "telefono": "3456 417626",
+  "whatsapp": "543456417626",
+  "email": "yoguiomline@gmail.com",
+  "instagram": "mar_agrosoluciones",
+  "ubicacion": "Entre Ríos, Argentina",
+  "horario": "Lunes a Sábado · 7:00 a 19:00 hs",
+  "anos_experiencia": 20,
+  "cantidad_marcas": 10,
+  "frase_familia": "La magnitud de lo que hacemos no está en el tamaño del negocio, sino en el compromiso con cada productor que confía en la familia Repetto temporada tras temporada.",
+  "nosotros_p1": "En MAR Agro Soluciones somos una empresa familiar que nació del amor al campo y creció con el productor entrerriano. Marcelo, Ulises y Azul Repetto trabajando codo a codo cada temporada, junto a Facundo y Brian — porque entendemos que detrás de cada consulta hay un productor que confía en nosotros.",
+  "nosotros_p2": "Trabajamos con los mejores insumos del mercado para que el productor citrícola, el horticultor y el extensivo cuenten con lo que necesitan, cuando lo necesitan. No somos solo un punto de venta: somos tu asesor técnico en el terreno.",
+  "nosotros_p3": "Con presencia activa en las principales campañas de la región, acompañamos desde la preparación del suelo hasta la entrega del producto en empaque, con el respaldo de marcas líderes mundiales y el conocimiento de quien conoce cada lote de Entre Ríos.",
+  "equipo": [
+    {
+      "iniciales": "MR",
+      "nombre": "Marcelo Repetto",
+      "rol": "Padre Fundador",
+      "bio": "La visión, la experiencia y la confianza que dan forma a todo lo que es MAR Agro Soluciones hoy.",
+      "tipo": "familia"
+    },
+    {
+      "iniciales": "UR",
+      "nombre": "Ulises Repetto",
+      "rol": "Gerente · Ventas · Asesoramiento",
+      "bio": "Motor del día a día. Coordina ventas, relaciones con productores y asesoramiento directo en campo.",
+      "tipo": "familia"
+    },
+    {
+      "iniciales": "AR",
+      "nombre": "Azul Repetto",
+      "rol": "Logística · Oficina · CM",
+      "bio": "Mantiene todo ordenado: logística, administración y la presencia digital que representa a MAR en redes.",
+      "tipo": "familia"
+    },
+    {
+      "iniciales": "FR",
+      "nombre": "Facundo Roncaglia",
+      "rol": "Ingeniero Agrónomo · Asesoría",
+      "bio": "El respaldo técnico del equipo. Recorre los lotes, diagnostica y recomienda con criterio agronómico.",
+      "tipo": "equipo"
+    },
+    {
+      "iniciales": "BM",
+      "nombre": "Brian Monzon",
+      "rol": "Encargado del Galpón",
+      "bio": "Garantiza que cada pedido salga en condiciones y en el momento justo. El motor logístico del depósito.",
+      "tipo": "equipo"
+    }
+  ],
+  "servicios": [
+    {
+      "icono": "🌿",
+      "nombre": "Asesoramiento Agronómico",
+      "descripcion": "Diagnóstico y recomendación con Facundo Roncaglia, Ing. Agrónomo. Analizamos el cultivo, el suelo y los objetivos para darte la solución exacta — no la más cara."
+    },
+    {
+      "icono": "🚚",
+      "nombre": "Entrega en Tiempo",
+      "descripcion": "En la campaña citrícola y de empaques, el tiempo es crítico. Garantizamos disponibilidad y entrega cuando el productor lo necesita. Ulises coordina la logística personalmente."
+    },
+    {
+      "icono": "📊",
+      "nombre": "Planificación de Campaña",
+      "descripcion": "Planificamos juntos la temporada para que no te falte nada. Presupuesto anticipado, reserva de stock y cronograma de aplicaciones ajustado a tus lotes."
+    },
+    {
+      "icono": "💬",
+      "nombre": "Atención Directa",
+      "descripcion": "Cuando llamás, te atiende Marcelo, Ulises, Azul o alguien del equipo. Sin call centers, sin demoras. Respuesta en el día porque en el campo los problemas no esperan."
+    },
+    {
+      "icono": "🔬",
+      "nombre": "Fitosanitarios de Calidad",
+      "descripcion": "Línea completa de herbicidas, fungicidas e insecticidas con Adama, Syngenta y otras marcas líderes. Aplicaciones seguras y eficientes para cada cultivo."
+    },
+    {
+      "icono": "🌱",
+      "nombre": "Nutrición con Yara",
+      "descripcion": "Fertilizantes foliares, correctores y planes de fertirriego con la línea Yara. La marca más importante de nuestro portafolio para maximizar rendimiento y calidad."
+    }
+  ]
+}
